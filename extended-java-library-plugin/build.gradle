@@ -1,0 +1,21 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+}
+
+description = "A Gradle plugin that extends the normal java-library plugin. It's a Playground :)"
+group = 'blog.elmland.gradle'
+version = '1.0.0'
+
+repositories {
+    jcenter()
+}
+
+gradlePlugin {
+    plugins {
+        extendedJavaLibraryPlugin {
+            id = 'blog.elmland.gradle.java-library-extended'
+            implementationClass = 'blog.elmland.gradle.ExtendedJavaLibraryPlugin'
+        }
+    }
+}
